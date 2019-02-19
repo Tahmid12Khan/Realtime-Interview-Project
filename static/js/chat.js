@@ -1,6 +1,6 @@
 $(document).ready(function () {
 	//make connection
-	var socket = io.connect('192.168.1.189:3000');
+	var socket = io.connect('localhost:3000');
 	var message = $('#message');
 	var send_message = $('#btn');
 	var feedback = $('#feedback');
