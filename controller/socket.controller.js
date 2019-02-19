@@ -1,10 +1,8 @@
 const Message = require('../model/message.model');
-const User = require('../model/user.model')
-const Room = require('../model/room.model')
+const User = require('../model/user.model');
+const Room = require('../model/room.model');
 module.exports = (server) => {
-    const io = require("socket.io")(server)
-
-
+    const io = require("socket.io")(server);
     io.on('connection', (socket) => {
 
         function getStatus(userName) {
@@ -56,8 +54,7 @@ module.exports = (server) => {
                         userName: socket.userName
                     }, {
                         rooms: 1
-                    }).
-                    then(data => {
+                    }).then(data => {
                         rooms = data;
                         //console.log("Rooms: " + rooms);
                         rooms.rooms.forEach(function (room) {
@@ -105,8 +102,7 @@ module.exports = (server) => {
                         userName: socket.userName
                     }, {
                         rooms: 1
-                    }).
-                    then(data => {
+                    }).then(data => {
                         rooms = data;
                         //console.log("Rooms: " + rooms);
                         rooms.rooms.forEach(function (room) {
@@ -130,4 +126,4 @@ module.exports = (server) => {
         //     })
         // })
     })
-}
+};
